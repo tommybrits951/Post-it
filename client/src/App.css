@@ -1,0 +1,23 @@
+/* .scroll {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+}
+ */
+::-webkit-scrollbar {
+    background-color: black;
+    border-radius: 10px;
+    width: 8px;
+    position: absolute;
+    left: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #0665ae;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 12px;
+    height: 5px;
+    width: 10px
+}
