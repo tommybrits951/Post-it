@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import PostContext from '../context/PostContext'
 import BoardList from '../components/board/BoardList'
 import BoardForm from "../components/board/BoardForm"
@@ -18,10 +18,10 @@ export default function Boards() {
     }
 
     return (
-        <section className='pt-16'>
+        <section className='pt-16 z-1'>
             {openForm ? <BoardForm closeForm={handleForm} handleForm={handleForm} /> : (
                 <>
-                    <button title="formBtn" className='absolute bg-gray-500 w-10/12 left-1/12 p-2 text-white rounded shadow-lg hover:scale-95 cursor-pointer' onClick={handleForm}>New Board</button>
+                    <button title="formBtn" className='absolute bg-gray-500 w-10/12 top-20 left-1/12 p-2 text-white rounded shadow-2xl hover:scale-95 cursor-pointer' onClick={handleForm}>New Board</button>
                     <BoardList boards={boards} /> 
                 </>
             )}

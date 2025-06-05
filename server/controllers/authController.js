@@ -22,6 +22,25 @@ function buildToken(user, exp, secret) {
 
 
 
+async function logout(req, res) {
+    try {
+        
+        res.clearCookie("jwt", {
+            httpOnly: true,
+            sameSite: "None",
+            secure: true
+        })
+        res.json({ data: null})
+        console.log(token)
+    } catch (err) {
+        res.status(500).json({message: err.message || " You're trapped!"})
+    }
+}
+
+
+
+
+
 async function login(req, res) {
     try {
         const { email, password} = req.body;
@@ -84,5 +103,6 @@ async function decodeUser(req, res ) {
 module.exports = {
     login,
     refreshHandle,
-    decodeUser
+    decodeUser,
+    logout
 }

@@ -12,8 +12,8 @@ export default function usePosts(board_id, auth) {
         .then(res => {
             setPosts(res.data)
         })
-        .catch(err => console.error()) : null
-    }, [board_id])
+        .catch(err => console.log(err)) : null
+    }, [auth, board_id])
 
     return [posts, setPosts]
 }
